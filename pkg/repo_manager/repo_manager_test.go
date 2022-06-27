@@ -5,10 +5,9 @@ import (
 	"path"
 	"strings"
 
-	. "github.com/the-gigi/multi-git/pkg/helpers"
-
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
+	. "github.com/the-gigi/multi-git/pkg/helpers"
 )
 
 const baseDir = "/tmp/test-multi-git"
@@ -24,6 +23,8 @@ var _ = Describe("Repo manager tests", func() {
 	}
 
 	BeforeEach(func() {
+		err = ConfigureGit()
+		Ω(err).Should(BeNil())
 		removeAll()
 		err = CreateDir(baseDir, "dir-1", true)
 		Ω(err).Should(BeNil())
