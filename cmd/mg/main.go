@@ -6,9 +6,8 @@ import (
 	"log"
 	"os"
 	"path"
+	"repo_manager/pkg/repo_manager"
 	"strings"
-
-	"github.com/the-gigi/multi-git/pkg/repo_manager"
 )
 
 func main() {
